@@ -18,7 +18,7 @@ pipeline {
         }
         stage('test report') {
             steps {
-                sh 'mvn -Dtest=TestCss test'
+                sh 'mvn -Dtest=TestCss -DfailIfNoTests=false test'
                 sh 'mvn surefire-report:report'
             }
         }
